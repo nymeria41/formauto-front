@@ -1,3 +1,5 @@
+//app.route.ts
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { VoitureListComponent } from './voiture-list/voiture-list.component';

@@ -2,11 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { VoitureService } from '../service/voiture.service';
 import { Voiture } from '../modele/voiture.model';
+import {FormsModule} from '@angular/forms';
+import {CommonModule} from '@angular/common';
+import {HttpClientModule} from '@angular/common/http';
 
 @Component({
   selector: 'app-modify-voiture',
   templateUrl: './modify-voiture.component.html',
-  styleUrls: ['./modify-voiture.component.less']
+  styleUrls: ['./modify-voiture.component.less'],
+  standalone: true,
+  imports: [FormsModule,CommonModule,HttpClientModule]
 })
 export class ModifyVoitureComponent implements OnInit {
   voiture: Voiture | null = null;  // Voiture à modifier

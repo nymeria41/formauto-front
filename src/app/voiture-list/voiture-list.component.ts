@@ -4,11 +4,14 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { VoitureService } from '../service/voiture.service';
 import { Voiture } from '../modele/voiture.model';
+import {HttpClientModule} from '@angular/common/http';
 
 @Component({
   selector: 'app-voiture-list',
+  standalone: true,
   templateUrl: './voiture-list.component.html',
-  styleUrls: ['./voiture-list.component.less']
+  styleUrls: ['./voiture-list.component.less'],
+  imports: [CommonModule,HttpClientModule]
 })
 export class VoitureListComponent implements OnInit {
   voitures: Voiture[] = [];  // Tableau pour stocker les voitures
@@ -40,17 +43,22 @@ export class VoitureListComponent implements OnInit {
 
   // Méthode pour supprimer une voiture
   deleteVoiture(id: number): void {
-    if (confirm('Êtes-vous sûr de vouloir supprimer cette voiture ?')) {
-      this.voitureService.deleteVoiture(id).subscribe(
-        () => {
-          this.getVoitures(); // Récupérer à nouveau la liste après la suppression
-          alert('Voiture supprimée avec succès !');
-        },
-        (error) => {
-          this.errorMessage = 'Erreur lors de la suppression de la voiture.';
-          console.error('Erreur lors de la suppression de la voiture:', error);
-        }
-      );
+    if (id !== undefined) {
+      if (confirm('Êtes-vous sûr de vouloir supprimer cette voiture ?')) {
+        this.voitureService.deleteVoiture(id).subscribe(
+          () => {
+            this.getVoitures(); // Récupérer à nouveau la liste après la suppression
+            alert('Voiture supprimée avec succès !');
+          },
+          (error) => {
+            this.errorMessage = 'Erreur lors de la suppression de la voiture.';
+            console.error('Erreur lors de la suppression de la voiture:', error);
+          }
+        );
+      }
+    }
+    else {
+      console.error('L\'ID de la voiture est indéfini.');
     }
   }
 }

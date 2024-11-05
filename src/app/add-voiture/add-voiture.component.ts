@@ -2,12 +2,17 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { VoitureService } from '../service/voiture.service';
-import { Voiture } from '../modele/voiture.model'; // Assurez-vous que le DTO est bien défini
+import { Voiture } from '../modele/voiture.model';
+import {FormsModule} from '@angular/forms';
+import { provideHttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-add-voiture',
   templateUrl: './add-voiture.component.html',
-  styleUrls: ['./add-voiture.component.less'] // Si vous utilisez LESS pour le style
+  styleUrls: ['./add-voiture.component.less'],
+  standalone: true,
+  imports: [FormsModule],
+
 })
 export class AddVoitureComponent {
   voiture: Voiture = {

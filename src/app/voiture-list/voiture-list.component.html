@@ -22,8 +22,8 @@
       <td>{{ voiture.annee }}</td>
       <td>{{ voiture.prix | currency:'EUR' }}</td>
       <td>
-        <button (click)="modifyVoiture(voiture.id)" class="btn btn-primary">Modifier</button>
-        <button (click)="deleteVoiture(voiture.id)" class="btn btn-danger">Supprimer</button>
+        <button (click)="modifyVoiture(voiture.id!)" class="btn btn-primary">Modifier</button>
+        <button (click)="deleteVoiture(voiture.id!)" class="btn btn-danger">Supprimer</button>
       </td>
     </tr>
     </tbody>
