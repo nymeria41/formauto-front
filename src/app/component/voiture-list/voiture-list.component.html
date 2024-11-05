@@ -15,7 +15,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let voiture of voitures">
+    <tr *ngFor="let voiture of voitures" (click)="showVoiture(voiture.id!)">
       <td>{{ voiture.id }}</td>
       <td>{{ voiture.marque }}</td>
       <td>{{ voiture.modele }}</td>

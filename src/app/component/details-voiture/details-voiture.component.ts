@@ -4,14 +4,13 @@ import { VoitureService } from '../../service/voiture.service';
 import { Voiture } from '../../modele/voiture.model';
 import {FormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
-import {HttpClientModule} from '@angular/common/http';
 
 @Component({
   selector: 'app-details-voiture',
   templateUrl: './details-voiture.component.html',
   styleUrls: ['./details-voiture.component.less'],
   standalone: true,
-  imports: [FormsModule,CommonModule,HttpClientModule]
+  imports: [FormsModule,CommonModule]
 
 })
 export class DetailsVoitureComponent implements OnInit {

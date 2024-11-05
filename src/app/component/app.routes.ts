@@ -11,7 +11,7 @@ export const routes: Routes = [
   { path: 'voitures', component: VoitureListComponent },
   { path: 'add', component: AddVoitureComponent },
   { path: 'edit/:id', component: ModifyVoitureComponent },
-  { path: 'voitures/:id', component: DetailsVoitureComponent },
+  { path: 'voiture/:id', component: DetailsVoitureComponent },
   { path: '', redirectTo: '/voitures', pathMatch: 'full' },
 ];
 

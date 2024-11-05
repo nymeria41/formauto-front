@@ -42,6 +42,11 @@ export class VoitureListComponent implements OnInit {
     this.router.navigate(['/edit', id]); // Naviguer vers le composant de modification avec l'ID
   }
 
+  // Méthode pour naviguer vers le composant de consultation d'une voiture
+  showVoiture(id: number): void {
+    this.router.navigate(['/voiture', id]); // Naviguer vers le composant de consultation avec l'ID
+  }
+
   // Méthode pour supprimer une voiture
   deleteVoiture(id: number): void {
     if (id !== undefined) {
