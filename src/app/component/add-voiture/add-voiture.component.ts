@@ -1,8 +1,8 @@
 // add-voiture.component.ts
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { VoitureService } from '../service/voiture.service';
-import { Voiture } from '../modele/voiture.model';
+import { VoitureService } from '../../service/voiture.service';
+import { Voiture } from '../../modele/voiture.model';
 import {FormsModule} from '@angular/forms';
 import { provideHttpClient } from '@angular/common/http';
 

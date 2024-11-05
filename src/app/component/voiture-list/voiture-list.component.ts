@@ -2,16 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { NgModule } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { VoitureService } from '../service/voiture.service';
-import { Voiture } from '../modele/voiture.model';
+import { VoitureService } from '../../service/voiture.service';
+import { Voiture } from '../../modele/voiture.model';
 import {HttpClientModule} from '@angular/common/http';
+
 
 @Component({
   selector: 'app-voiture-list',
   standalone: true,
   templateUrl: './voiture-list.component.html',
   styleUrls: ['./voiture-list.component.less'],
-  imports: [CommonModule,HttpClientModule]
+  imports: [CommonModule]
 })
 export class VoitureListComponent implements OnInit {
   voitures: Voiture[] = [];  // Tableau pour stocker les voitures
@@ -38,7 +39,7 @@ export class VoitureListComponent implements OnInit {
 
   // Méthode pour naviguer vers le composant de modification d'une voiture
   modifyVoiture(id: number): void {
-    this.router.navigate(['/modify-voiture', id]); // Naviguer vers le composant de modification avec l'ID
+    this.router.navigate(['/edit', id]); // Naviguer vers le composant de modification avec l'ID
   }
 
   // Méthode pour supprimer une voiture

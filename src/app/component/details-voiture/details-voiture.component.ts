@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { VoitureService } from '../service/voiture.service';
-import { Voiture } from '../modele/voiture.model';
+import { VoitureService } from '../../service/voiture.service';
+import { Voiture } from '../../modele/voiture.model';
 import {FormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';

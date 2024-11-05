@@ -24,9 +24,10 @@ import { DetailsVoitureComponent } from './details-voiture/details-voiture.compo
     AddVoitureComponent,
     VoitureListComponent,
     ModifyVoitureComponent,
-    AppComponent
+    AppComponent,
   ],
   providers: [ provideHttpClient()],
   bootstrap: []
 })
 export class AppModule { }
+
