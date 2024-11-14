@@ -55,6 +55,7 @@ export class VoitureListComponent implements OnInit {
           () => {
             this.getVoitures(); // Récupérer à nouveau la liste après la suppression
             alert('Voiture supprimée avec succès !');
+            this.router.navigate(['/voitures']);
           },
           (error) => {
             this.errorMessage = 'Erreur lors de la suppression de la voiture.';

@@ -19,7 +19,15 @@ export class AddVoitureComponent {
     marque: '',
     modele: '',
     annee: 0,
-    prix: 0
+    prix: 0,
+    description : '',
+    carburant : '',
+    type : '',
+    vitesse : 0,
+    cylindre : 0,
+    reservoir : 0,
+    boite : '',
+    images : ['']
   };
 
   constructor(private voitureService: VoitureService, private router: Router) {}
