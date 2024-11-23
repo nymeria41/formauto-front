@@ -26,6 +26,10 @@ export class VoitureService {
     return this.http.post<Voiture>(this.apiUrl, voiture);
   }
 
+  addVoitureWithImage(data: FormData): Observable<any> {
+    return this.http.post(this.apiUrl, data);
+  }
+
   // Mettre à jour une voiture
   updateVoiture(id: number, voiture: Voiture): Observable<Voiture> {
     return this.http.put<Voiture>(`${this.apiUrl}/${id}`, voiture);
@@ -34,5 +38,10 @@ export class VoitureService {
   // Supprimer une voiture
   deleteVoiture(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
+
+  //obtenir les images d'une voiture par son ID
+  getImages(id: number): Observable<string[]> {
+    return this.http.get<string[]>(`${this.apiUrl}/${id}/images`);
   }
 }

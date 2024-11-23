@@ -21,5 +21,47 @@
     <input type="number" id="prix" [(ngModel)]="voiture.prix" name="prix" required>
   </div>
 
+  <div>
+    <label for="description">Description:</label>
+    <input type="text" id="description" [(ngModel)]="voiture.description" name="description" required>
+  </div>
+
+
+  <div>
+    <label for="carburant">Carburant:</label>
+    <input type="text" id="carburant" [(ngModel)]="voiture.carburant" name="carburant" required>
+  </div>
+
+  <div>
+    <label for="type">Type:</label>
+    <input type="text" id="type" [(ngModel)]="voiture.type" name="type" required>
+  </div>
+
+  <div>
+    <label for="vitesse">Vitesse:</label>
+    <input type="int" id="vitesse" [(ngModel)]="voiture.vitesse" name="vitesse" required>
+  </div>
+
+  <div>
+    <label for="cylindre">Cylindrée:</label>
+    <input type="number" id="cylindre" [(ngModel)]="voiture.cylindre" name="cylindre" required>
+  </div>
+
+  <div>
+    <label for="reservoir">Capacité réservoir:</label>
+    <input type="number" id="reservoir" [(ngModel)]="voiture.reservoir" name="reservoir" required>
+  </div>
+
+  <div>
+    <label for="boite">Type de boîte de vitesse:</label>
+    <input type="text" id="boite" [(ngModel)]="voiture.boite" name="boite" required>
+  </div>
+
+
+  <div>
+    <label for="file">Image:</label>
+    <input id="file" type="file" name="file" (change)="onFileSelected($event)" />
+  </div>
+
   <button type="submit">Ajouter Voiture</button>
 </form>

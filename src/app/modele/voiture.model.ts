@@ -11,7 +11,7 @@ export class Voiture {
   cylindre: number;
   reservoir: number;
   boite: string;
-  images: string[];
+  images?: string[];
 
   constructor() {
     this.marque = '';

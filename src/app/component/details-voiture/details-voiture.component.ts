@@ -25,15 +25,28 @@ export class DetailsVoitureComponent implements OnInit {
 
   // Méthode pour récupérer les détails d'une voiture par ID
   getVoitureDetails(): void {
-    const id = +this.route.snapshot.paramMap.get('id')!; // Récupérer l'ID depuis les paramètres de l'URL
-    this.voitureService.getVoitureById(id).subscribe(
-      (response) => {
-        this.voiture = response;  // Stocker la voiture récupérée
-      },
-      (error) => {
-        this.errorMessage = 'Voiture introuvable. Veuillez vérifier l\'ID de la voiture.'; // Gérer les erreurs
-        console.error('Erreur lors de la récupération des détails de la voiture:', error);
+    this.route.paramMap.subscribe((params) => {
+      const id = params.get('id');
+      if (id) {
+        this.voitureService.getVoitureById(+id).subscribe({
+          next: (voiture) => {
+            this.voiture = voiture;
+            this.voitureService.getImages(+id).subscribe({
+              next: (images) => {
+                if (this.voiture) {
+                  this.voiture.images = images;
+                } // ici
+              },
+              error: (err) => {
+                console.error('Erreur lors du chargement des images', err);
+              }
+            });
+          },
+          error: (err) => {
+            console.error('Erreur lors du chargement de la voiture', err);
+          }
+        });
       }
-    );
+    });
   }
 }
